@@ -17,7 +17,7 @@
 
 
     <bean id="orderService" class="hello.core.Order.OrderServiceImpl">
-        <constructor-arg name="mr" ref="memberRepository" />
+        <constructor-arg name="memberRepository" ref="memberRepository" />
         <constructor-arg name="discountPolicy" ref="discountPolicy"/>
     </bean>
 
