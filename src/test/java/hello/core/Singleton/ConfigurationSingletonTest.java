@@ -18,19 +18,19 @@ public class ConfigurationSingletonTest {
     ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
 
-    @Test
-    @DisplayName("MemberRepository의 싱글톤 적용 확인")
-    void MemberRepositorySigletonTest() {
-
-        MemberServiceImpl memberService = ac.getBean(MemberServiceImpl.class);
-        OrderServiceImpl orderService = ac.getBean(OrderServiceImpl.class);
-
-        MemberRepository memberRepository1 = memberService.getMemberRepository();
-        MemberRepository memberRepository2 = orderService.getMemberRepository();
-
-        System.out.println("memberService -> memberRepository = " + memberRepository1);
-        System.out.println("orderService -> memberRepository2 = " + memberRepository2);
-    }
+//    @Test
+//    @DisplayName("MemberRepository의 싱글톤 적용 확인")
+//    void MemberRepositorySigletonTest() {
+//
+//        MemberServiceImpl memberService = ac.getBean(MemberServiceImpl.class);
+//        OrderServiceImpl orderService = ac.getBean(OrderServiceImpl.class);
+//
+//        MemberRepository memberRepository1 = memberService.getMemberRepository();
+//        MemberRepository memberRepository2 = orderService.getMemberRepository();
+//
+//        System.out.println("memberService -> memberRepository = " + memberRepository1);
+//        System.out.println("orderService -> memberRepository2 = " + memberRepository2);
+//    }
 
     @Test
     @DisplayName("Deep Configuration")

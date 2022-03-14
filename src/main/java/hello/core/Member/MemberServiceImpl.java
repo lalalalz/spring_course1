@@ -1,9 +1,19 @@
 package hello.core.Member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImpl implements MemberService {
 
     private MemberRepository memberRepository;
 
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
+
+    @Autowired
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
@@ -18,7 +28,4 @@ public class MemberServiceImpl implements MemberService {
         return memberRepository.findById(memberId);
     }
 
-    public MemberRepository getMemberRepository() {
-        return this.memberRepository;
-    }
 }
