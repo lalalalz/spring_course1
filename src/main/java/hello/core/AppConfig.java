@@ -8,11 +8,12 @@ import hello.core.Order.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class AppConfig {
 
     @Bean
     public MemberRepository memoryMemberRepository() {
+        System.out.println("call memoryMemberRepository");
         return new MemoryMemberRepository();
     }
 
@@ -26,11 +27,13 @@ public class AppConfig {
 
     @Bean
     public MemberService memberService() {
+        System.out.println("call memberService");
         return new MemberServiceImpl(memoryMemberRepository());
     }
 
     @Bean
     public OrderService orderService() {
+        System.out.println("call orderService");
         return new OrderServiceImpl(memoryMemberRepository(),
                                     RateDiscountPolicy());
     }
