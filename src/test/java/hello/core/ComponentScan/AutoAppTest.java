@@ -16,9 +16,16 @@ import org.springframework.context.annotation.Bean;
 
 import static org.assertj.core.api.Assertions.*;
 
+
 public class AutoAppTest {
 
     ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
+
+    @Test
+    @DisplayName("빈 충돌 테스트")
+    void CrashedBeanTest() {
+
+    }
 
     @Test
     @DisplayName("컴포넌트 스캔 테스트")

@@ -9,12 +9,18 @@ public class MemberServiceImpl implements MemberService {
 
     private MemberRepository memberRepository;
 
+
     public MemberRepository getMemberRepository() {
         return memberRepository;
     }
 
-    @Autowired
+//    @Autowired
     public MemberServiceImpl(MemberRepository memberRepository) {
+//        this.memberRepository = memberRepository;
+    }
+
+    @Autowired
+    public void init(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
