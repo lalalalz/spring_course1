@@ -1,19 +1,15 @@
 package hello.core.FindBean;
 
 import hello.core.AppConfig;
-import hello.core.Member.Member;
 import hello.core.Member.MemberService;
 import hello.core.Member.MemberServiceImpl;
 import hello.core.Order.DiscountPolicy;
-import hello.core.Order.RateDiscountOrderServiceTest;
 import hello.core.Order.RateDiscountPolicy;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.GenericXmlApplicationContext;
 
 import java.util.Map;
 

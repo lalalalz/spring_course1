@@ -3,7 +3,6 @@ package hello.core.Singleton;
 import hello.core.AppConfig;
 import hello.core.Member.MemberService;
 import hello.core.Singletone.SingletonService;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;

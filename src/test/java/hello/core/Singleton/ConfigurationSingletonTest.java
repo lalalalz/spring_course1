@@ -1,12 +1,6 @@
 package hello.core.Singleton;
 
 import hello.core.AppConfig;
-import hello.core.Member.MemberRepository;
-import hello.core.Member.MemberService;
-import hello.core.Member.MemberServiceImpl;
-import hello.core.Order.OrderService;
-import hello.core.Order.OrderServiceImpl;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;

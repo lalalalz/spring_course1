@@ -2,17 +2,15 @@ package hello.core.ComponentScan;
 
 import hello.core.AutoAppConfig;
 import hello.core.Member.MemberRepository;
-import hello.core.Member.MemberService;
 import hello.core.Member.MemberServiceImpl;
 import hello.core.Member.MemoryMemberRepository;
 import hello.core.Order.DiscountPolicy;
+import hello.core.Order.FixDiscountPolicy;
 import hello.core.Order.OrderServiceImpl;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -37,6 +35,20 @@ public class AutoAppTest {
             Object bean = ac.getBean(beanDefinitionName);
             System.out.println("beanName = " + beanDefinitionName + " bean = " + bean.getClass());
         }
+
+    }
+
+    @Test
+    @DisplayName("동일한 타입이 2이상 있을 때, @Primary 사용 테스트")
+    void PrimaryAnnotationTest() {
+
+        OrderServiceImpl orderService = ac.getBean(OrderServiceImpl.class);
+
+        DiscountPolicy discountPolicy = orderService.getDiscountPolicy();
+
+        System.out.println("orderServiceImpl -> discountPolicy = " + discountPolicy);
+
+        assertThat(discountPolicy).isInstanceOf(FixDiscountPolicy.class);
     }
 
     @Test
@@ -60,4 +72,5 @@ public class AutoAppTest {
         assertThat(memberRepository2).isInstanceOf(MemoryMemberRepository.class);
         assertThat(discountPolicy).isInstanceOf(DiscountPolicy.class);
     }
+
 }

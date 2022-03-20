@@ -1,17 +1,12 @@
 package hello.core.Dependency;
 
 import hello.core.AutoAppConfig;
-import hello.core.ComponentScan.filter.BeanA;
-import hello.core.Member.Member;
 import hello.core.Member.MemberRepository;
 import hello.core.Member.MemberServiceImpl;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
 
 import static org.assertj.core.api.Assertions.*;
 
